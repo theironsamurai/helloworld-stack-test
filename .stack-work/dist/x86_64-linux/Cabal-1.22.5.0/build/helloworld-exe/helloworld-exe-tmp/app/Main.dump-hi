@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-06-12 14:05:29.965367 UTC
+2016-06-13 00:06:39.200905 UTC
 
 interface main@main:Main 7103
-  interface hash: 11d7b8ede4518bc7d1ddc31f29f71746
-  ABI hash: f2087ebeaf246dacca2c4d97ba91aefc
+  interface hash: fa533573b49654be8a8c968caffeeab3
+  ABI hash: 92f0e17a569e85c0bd4f4ba17191a475
   export-list hash: 8e911f22389fd59fb138400ab07f04b8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 11265468444b9e9b93985302f94aa8e9
@@ -21,21 +21,36 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
                          base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  helloworld-0.1.0.0@hello_LcmJCjfKuj651oaVRHuNpn:Lib c986f325d6a8782bf633d1f184190798
-b33a4dadbd24ded63a0a099b6ce5db28
+157fca7159e5c9f26bf8806bc6511e13
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
-                Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-2ffc94c9c1c86ff8817009c2c2191e13
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+04b1538be12069c7c0df15fe69d9386d
   main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Main.main2
+                   GHC.Types.True
+                   eta) -}
+100f3f1af2ff08e4b151f3d74f467f54
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Hello World!"#) -}
+b34e7b7dd61dff8e8a4e8da31e89cee0
+  main3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
-                   Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
